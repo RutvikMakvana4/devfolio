@@ -3,9 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LuGithub, LuLinkedin, LuTwitter, LuMoon, LuSun } from "react-icons/lu";
 import "./globals.css";
 import { Button } from "@/components/ui/button";
-import { LuMoon, LuSun } from "react-icons/lu";
+import { socialMedia } from "@/lib/data";
+
+const iconMap = {
+  github: LuGithub,
+  linkedin: LuLinkedin,
+  twitter: LuTwitter,
+};
 
 export default function RootLayout({ children }) {
   const [theme, setTheme] = useState("dark");
@@ -97,9 +104,30 @@ export default function RootLayout({ children }) {
             {children}
           </main>
 
-          <footer className="py-6 mt-auto transition-colors duration-300 border-t border-border">
-            <div className="max-w-2xl mx-auto px-4 sm:px-6 text-sm text-muted-foreground">
-              © {new Date().getFullYear()}
+          <footer className="py-8 mt-auto transition-colors duration-300">
+            <div className="max-w-2xl mx-auto px-4 sm:px-6">
+              <div className="flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-center">
+                <p className="text-sm text-muted-foreground">
+                  © {new Date().getFullYear()} Rutvik Makvana
+                </p>
+                <div className="flex gap-4">
+                  {socialMedia.map((social) => {
+                    const Icon = iconMap[social.icon];
+                    return (
+                      <a
+                        key={social.title}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={social.title}
+                        className="p-2 rounded hover:bg-muted transition-colors"
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </footer>
         </div>
