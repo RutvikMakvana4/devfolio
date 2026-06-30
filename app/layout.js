@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
         style={{ fontFamily: "Inter, sans-serif" }}
       >
         <div className="min-h-screen flex flex-col">
-          <nav className="py-6 sticky top-0 z-50 bg-background/95 backdrop-blur transition-colors duration-300">
+          <nav className="py-2 sticky top-0 z-50 bg-background/95 backdrop-blur transition-colors duration-300">
             <div className="max-w-2xl mx-auto px-4 sm:px-6 flex justify-between items-center">
               <Link
                 href="/"
@@ -100,11 +100,11 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
 
-          <main className="flex-1 max-w-2xl mx-auto w-full px-4 sm:px-6 py-12">
+          <main className="flex-1 max-w-2xl mx-auto w-full px-4 sm:px-6 py-4 sm:py-6">
             {children}
           </main>
 
-          <footer className="py-8 mt-auto transition-colors duration-300">
+          <footer className="py-2 mt-auto transition-colors duration-300">
             <div className="max-w-2xl mx-auto px-4 sm:px-6">
               <div className="flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-center">
                 <p className="text-sm text-muted-foreground">

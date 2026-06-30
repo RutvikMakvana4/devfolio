@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-5 sm:space-y-6">
       {/* Introduction */}
       <section>
         <p className="text-base leading-relaxed">
@@ -48,12 +48,12 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="space-y-4">
+      <section className="space-y-3">
         <h2 className="text-lg font-semibold">Work Experience</h2>
-        <p className="text-sm text-muted-foreground mb-4">
+        <p className="text-sm text-muted-foreground mb-3">
           Where I've worked, contributed, and shipped things that matter.
         </p>
-        <div className="space-y-3">
+        <div className="space-y-2">
           {experiences.map((exp) => (
             <div
               key={exp.id}
@@ -74,13 +74,13 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <h2 className="text-lg font-semibold">Skills</h2>
         <p className="text-sm text-muted-foreground">
           Tools and technologies I work with, and keep reaching for.
         </p>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {Object.entries(skills).map(([category, items]) => (
             <div key={category}>
               <h3 className="text-xs font-semibold uppercase text-muted-foreground mb-3">
@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Connect Section */}
-      <section className="space-y-4">
+      <section className="space-y-3">
         <h2 className="text-lg font-semibold">Connect</h2>
         <div className="flex gap-3 flex-wrap">
           {socialMedia.map((social) => {
@@ -125,8 +125,8 @@ export default function Home() {
       </section>
 
       {/* Email CTA */}
-      <section className="border border-border rounded-lg p-6 bg-muted/30">
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+      <section className="border border-border rounded-lg p-4 sm:p-5 bg-muted/30">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <div>
             <p className="text-sm font-medium">Let's work together</p>
             <p className="text-xs text-muted-foreground mt-1">
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Projects & Blog Links */}
-      <section className="text-sm pt-4">
+      <section className="text-sm pt-2">
         <p>
           Check out my{" "}
           <Link
