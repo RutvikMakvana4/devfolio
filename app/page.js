@@ -29,7 +29,6 @@ export default function Home() {
 
   return (
     <div className="space-y-5 sm:space-y-6">
-      {/* Introduction */}
       <section>
         <p className="text-base leading-relaxed">
           I'm <span className="font-semibold">Rutvik Makvana</span>, a backend
@@ -38,7 +37,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* About */}
       <section>
         <p className="text-sm text-muted-foreground leading-relaxed">
           I've spent years building distributed systems, optimizing databases,
@@ -47,7 +45,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Experience Section */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Work Experience</h2>
         <p className="text-sm text-muted-foreground mb-3">
@@ -73,24 +70,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">Skills</h2>
-        <p className="text-sm text-muted-foreground">
-          Tools and technologies I work with, and keep reaching for.
-        </p>
+      <section className="space-y-6">
+        <div>
+          <h2 className="text-lg font-semibold">Skills</h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            Tools and technologies I work with, and keep reaching for.
+          </p>
+        </div>
 
         <div className="space-y-4">
           {Object.entries(skills).map(([category, items]) => (
-            <div key={category}>
-              <h3 className="text-xs font-semibold uppercase text-muted-foreground mb-3">
-                {category}
-              </h3>
+            <div key={category} className="flex gap-8">
+              <div className="min-w-32">
+                <p className="text-sm font-semibold">{category}</p>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-muted text-foreground text-xs rounded-full border border-border hover:bg-muted/70 transition-colors"
+                    className="px-3 py-1.5 bg-muted/50 text-foreground text-xs rounded-full hover:bg-muted transition-colors"
                   >
                     {skill}
                   </span>
@@ -101,7 +99,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Connect Section */}
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Connect</h2>
         <div className="flex gap-3 flex-wrap">
@@ -124,7 +121,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Email CTA */}
       <section className="border border-border rounded-lg p-4 sm:p-5 bg-muted/30">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
           <div>
@@ -152,7 +148,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects & Blog Links */}
       <section className="text-sm pt-2">
         <p>
           Check out my{" "}
