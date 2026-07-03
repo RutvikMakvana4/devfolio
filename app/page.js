@@ -14,6 +14,7 @@ import {
 } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { experiences, socialMedia, skills, email } from "@/lib/data";
+import Image from "next/image";
 
 const iconMap = {
   github: LuGithub,
@@ -69,8 +70,15 @@ export default function Home() {
               {/* Company Header */}
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded bg-muted flex items-center justify-center text-xs font-semibold">
-                    {exp.company[0]}
+                  <div className="w-8 h-8 rounded-md border bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+                    <Image
+                      src={exp.logo}
+                      alt={exp.company}
+                      width={20}
+                      height={20}
+                      unoptimized
+                      className="object-contain"
+                    />
                   </div>
                   <p className="font-semibold text-base">{exp.company}</p>
                 </div>
@@ -92,7 +100,7 @@ export default function Home() {
                       {/* Position Header */}
                       <button
                         onClick={() => toggleExpand(posId)}
-                        className="w-full text-left flex items-start justify-between hover:opacity-70 transition-opacity"
+                        className="w-full text-left flex items-start justify-between hover:opacity-70 transition-opacity cursor-pointer"
                       >
                         <div className="flex items-center gap-3 flex-1">
                           <div className="w-8 h-8 rounded border border-muted-foreground/30 flex items-center justify-center flex-shrink-0">
@@ -133,7 +141,7 @@ export default function Home() {
                           )}
 
                           {/* Technologies */}
-                          {pos.technologies.length > 0 && (
+                          {/* {pos.technologies.length > 0 && (
                             <div className="flex flex-wrap gap-2 pt-2">
                               {pos.technologies.map((tech) => (
                                 <span
@@ -144,7 +152,7 @@ export default function Home() {
                                 </span>
                               ))}
                             </div>
-                          )}
+                          )} */}
                         </div>
                       )}
                     </div>

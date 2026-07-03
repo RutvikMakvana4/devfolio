@@ -88,7 +88,7 @@ export default function RootLayout({ children }) {
                   size="sm"
                   onClick={toggleTheme}
                   disabled={!mounted}
-                  className="p-2 h-auto w-auto hover:bg-transparent transition-opacity disabled:cursor-default"
+                  className="p-2 h-auto w-auto hover:bg-transparent transition-opacity disabled:cursor-default cursor-pointer"
                 >
                   {theme === "light" ? (
                     <LuMoon className="w-4 h-4" />
