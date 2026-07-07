@@ -133,7 +133,7 @@ export function CommandPalette() {
           onKeyDown={onKeyDown}
           className={cn(
             "fixed left-1/2 top-[18%] z-[101] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2",
-            "glass overflow-hidden rounded-xl border border-border shadow-2xl",
+            "overflow-hidden rounded-xl border border-border bg-background/95 text-foreground shadow-2xl backdrop-blur-xl",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=open]:fade-in data-[state=open]:zoom-in-95 data-[state=closed]:fade-out",
           )}
@@ -149,7 +149,7 @@ export function CommandPalette() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Type a command or search…"
-              className="w-full bg-transparent py-3.5 text-sm outline-none placeholder:text-muted-foreground"
+              className="w-full bg-transparent py-3.5 text-sm text-foreground outline-none placeholder:text-muted-foreground"
             />
             <kbd className="hidden rounded border border-border px-1.5 py-0.5 text-[10px] text-muted-foreground sm:block">
               ESC
@@ -181,7 +181,7 @@ export function CommandPalette() {
                       "flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-sm transition-colors",
                       i === active
                         ? "bg-muted/40 text-foreground"
-                        : "text-muted-foreground",
+                        : "text-foreground/80 hover:text-foreground",
                     )}
                   >
                     <Icon className="size-4 shrink-0" />
