@@ -1,12 +1,13 @@
 "use client";
 
-import { LuGithub, LuLinkedin, LuTwitter, LuArrowUp } from "react-icons/lu";
+import { LuGithub, LuLinkedin, LuArrowUp } from "react-icons/lu";
+import { PiXLogo } from "react-icons/pi";
 import { socialMedia, profile } from "@/lib/data";
 
 const iconMap = {
   github: LuGithub,
   linkedin: LuLinkedin,
-  twitter: LuTwitter,
+  x: PiXLogo,
 };
 
 export function Footer() {
@@ -14,9 +15,8 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="mt-16">
+    <footer className="mt-8">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
-        <hr className="divider-glow" />
         <div className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
             <p className="text-sm text-muted-foreground">

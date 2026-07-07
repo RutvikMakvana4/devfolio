@@ -8,12 +8,10 @@ import { CopyEmail } from "@/components/site/copy-email";
 
 export default function Home() {
   return (
-    <div className="space-y-16 sm:space-y-20">
+    <div className="space-y-6 sm:space-y-8">
       <Hero />
 
-      <hr className="divider-glow" />
-
-      <section className="space-y-6">
+      <section className="space-y-4">
         <SectionHeading
           id="experience"
           eyebrow="Career"
@@ -23,9 +21,7 @@ export default function Home() {
         <Experience />
       </section>
 
-      <hr className="divider-glow" />
-
-      <section id="contact" className="scroll-mt-24">
+      <section id="contact" className="scroll-mt-24 space-y-4">
         <Reveal className="card-lift relative overflow-hidden rounded-2xl border border-border bg-card/50 p-6 sm:p-8">
           <div
             aria-hidden

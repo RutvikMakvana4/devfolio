@@ -66,7 +66,7 @@ export function Hero() {
 
         <div className="flex justify-center pt-1 sm:justify-start">
           <a
-            href="/resume.pdf"
+            href={profile.resumeUrl}
             download
             className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition-opacity hover:opacity-90"
           >

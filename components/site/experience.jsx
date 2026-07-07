@@ -18,21 +18,21 @@ export function Experience() {
       <div className="absolute bottom-2 left-[15px] top-2 w-px bg-gradient-to-b from-foreground/30 via-border to-transparent" />
 
       {experiences.map((exp, ei) => (
-        <Reveal key={exp.id} delay={ei * 90} className="relative pl-10">
+        <Reveal key={exp.id} delay={ei * 90} className="relative pl-16 sm:pl-20">
           {/* node dot */}
-          <span className="absolute left-0 top-1 grid size-8 place-items-center rounded-full border border-border bg-card shadow-sm">
+          <span className="absolute left-0 top-1 grid h-10 w-10 place-items-center rounded-full border border-border bg-white shadow-sm">
             <Image
               src={exp.logo}
               alt={exp.company}
-              width={18}
-              height={18}
+              width={24}
+              height={24}
               unoptimized
-              className="rounded-sm object-contain"
+              className="h-6 w-6 rounded-sm object-contain"
             />
           </span>
 
-          <div className="flex items-start justify-between gap-3">
-            <p className="font-semibold">{exp.company}</p>
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+            <p className="font-semibold text-base sm:text-lg">{exp.company}</p>
             <span className="whitespace-nowrap text-xs text-muted-foreground">
               {exp.location}
               {exp.isRemote && <span className="ml-1 text-foreground">• Remote</span>}
