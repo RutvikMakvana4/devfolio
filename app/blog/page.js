@@ -1,82 +1,84 @@
 import { getDevToArticles } from "@/lib/devto";
+import { Reveal } from "@/components/site/reveal";
 
 export const metadata = {
-  title: "Blog | Rutvik Makvana",
-  description: "Articles and thoughts on backend, systems, and AI",
+  title: "Blog",
+  description: "Articles and thoughts on backend, systems, and AI.",
 };
+
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
 
 export default async function Blog() {
   const articles = await getDevToArticles("rutvikmakvana4");
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  };
-
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl font-semibold mb-1">Writing</h1>
-        <p className="text-sm text-muted-foreground">
-          {articles.length} articles on backend, systems, and AI
+      <Reveal className="space-y-1">
+        <p className="text-xs font-medium uppercase tracking-wider text-foreground">
+          Writing
         </p>
-      </div>
+        <h1 className="text-2xl font-semibold tracking-tight">Blog</h1>
+        <p className="text-sm text-muted-foreground">
+          {articles.length > 0
+            ? `${articles.length} articles on backend, systems, and AI`
+            : "Thoughts on backend, systems, and AI"}
+        </p>
+      </Reveal>
 
       {articles.length > 0 ? (
-        <div className="space-y-6">
-          {articles.map((article) => (
-            <a
-              key={article.id}
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block border-b border-border pb-6 last:border-0 hover:opacity-70 transition-opacity group"
-            >
-              <div className="space-y-2">
-                <h2 className="font-semibold text-base group-hover:underline">
-                  {article.title}
-                </h2>
-
-                <p className="text-sm text-muted-foreground">
-                  {article.description}
-                </p>
-
-                <div className="flex gap-4 text-xs text-muted-foreground pt-2">
-                  <span>{formatDate(article.published_at)}</span>
-
-                  {article.reading_time_minutes && (
-                    <span>{article.reading_time_minutes} min read</span>
+        <div className="space-y-3">
+          {articles.map((article, i) => (
+            <Reveal key={article.id} delay={i * 60}>
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-lift group block rounded-2xl border border-border bg-card/50 p-5"
+              >
+                <div className="space-y-2">
+                  <h2 className="font-semibold transition-colors group-hover:text-foreground">
+                    {article.title}
+                  </h2>
+                  {article.description && (
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {article.description}
+                    </p>
                   )}
-
-                  {article.public_reactions_count > 0 && (
-                    <span>❤️ {article.public_reactions_count}</span>
+                  <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-muted-foreground">
+                    <span>{formatDate(article.published_at)}</span>
+                    {article.reading_time_minutes && (
+                      <span>{article.reading_time_minutes} min read</span>
+                    )}
+                    {article.public_reactions_count > 0 && (
+                      <span>❤️ {article.public_reactions_count}</span>
+                    )}
+                  </div>
+                  {article.tag_list?.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {article.tag_list.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
                   )}
                 </div>
-
-                {article.tag_list?.length > 0 && (
-                  <div className="flex gap-2 flex-wrap pt-2">
-                    {article.tag_list.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-1 bg-muted text-muted-foreground rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </a>
+              </a>
+            </Reveal>
           ))}
         </div>
       ) : (
         <p className="text-sm text-muted-foreground">
-          No articles found. Check your Dev.to profile!
+          No articles found yet — check back soon.
         </p>
       )}
     </div>
