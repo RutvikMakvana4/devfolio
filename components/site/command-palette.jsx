@@ -14,6 +14,7 @@ import {
   LuLinkedin,
   LuSun,
   LuCornerDownLeft,
+  LuPackage2,
 } from "react-icons/lu";
 import { profile, email, socialMedia } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -32,6 +33,7 @@ export function CommandPalette() {
     return [
       { group: "Navigate", label: "Home", icon: LuHouse, run: () => router.push("/") },
       { group: "Navigate", label: "Projects", icon: LuFolderGit2, run: () => router.push("/projects") },
+      { group: "Navigate", label: "Packages", icon: LuPackage2, run: () => router.push("/packages") },
       { group: "Navigate", label: "Blog", icon: LuNotebookPen, run: () => router.push("/blog") },
       {
         group: "Actions",

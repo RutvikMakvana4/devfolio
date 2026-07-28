@@ -1,5 +1,4 @@
-import { projects } from "@/lib/data";
-import { ProjectCard } from "@/components/site/project-card";
+import { ProjectTabs } from "@/components/site/project-tabs";
 import { Reveal } from "@/components/site/reveal";
 
 export const metadata = {
@@ -20,13 +19,7 @@ export default function Projects() {
         </p>
       </Reveal>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {projects.map((project, i) => (
-          <Reveal key={project.name} delay={i * 80}>
-            <ProjectCard project={project} />
-          </Reveal>
-        ))}
-      </div>
+      <ProjectTabs />
     </div>
   );
 }
