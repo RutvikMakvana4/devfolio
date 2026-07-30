@@ -10,7 +10,11 @@ import { cn } from "@/lib/utils";
 const links = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/packages", label: "Packages" },
+  {
+    href: "https://www.npmjs.com/~rutvikmakvana",
+    label: "Packages",
+    external: true,
+  },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -62,6 +66,21 @@ export function Navbar() {
                   link.href === "/"
                     ? pathname === "/"
                     : pathname.startsWith(link.href);
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative rounded-full px-3 py-1 text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.href}
