@@ -6,6 +6,7 @@ import { Footer } from "@/components/site/footer";
 import { ScrollProgress } from "@/components/site/scroll-progress";
 import { MouseGlow } from "@/components/site/mouse-glow";
 import { CommandPalette } from "@/components/site/command-palette";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,7 +63,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Script id="theme-script" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
       </head>
       <body className="bg-background font-sans text-foreground antialiased">
         <ScrollProgress />

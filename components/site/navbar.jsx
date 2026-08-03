@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
   {
     href: "https://www.npmjs.com/~rutvikmakvana",
