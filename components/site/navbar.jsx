@@ -20,6 +20,7 @@ const links = [
     external: true,
   },
   { href: "/blog", label: "Blog" },
+  { href: "/dreamverse", label: "DreamVerse" },
 ];
 
 export function Navbar() {

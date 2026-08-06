@@ -17,6 +17,7 @@ import {
   LuCornerDownLeft,
   LuPackage2,
   LuSparkles,
+  LuMoonStar,
 } from "react-icons/lu";
 import { profile, email, socialMedia } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -33,42 +34,17 @@ export function CommandPalette() {
   const commands = useMemo(() => {
     const social = Object.fromEntries(socialMedia.map((s) => [s.icon, s.href]));
     return [
-      {
-        group: "Navigate",
-        label: "Home",
-        icon: LuHouse,
-        run: () => router.push("/"),
-      },
-      {
-        group: "Navigate",
-        label: "Skills",
-        icon: LuSparkles,
-        run: () => router.push("/skills"),
-      },
-      {
-        group: "Navigate",
-        label: "Projects",
-        icon: LuFolderGit2,
-        run: () => router.push("/projects"),
-      },
-      {
-        group: "Navigate",
-        label: "Packages",
-        icon: LuPackage2,
-        run: () => router.push("/packages"),
-      },
-      {
-        group: "Navigate",
-        label: "Blog",
-        icon: LuNotebookPen,
-        run: () => router.push("/blog"),
-      },
+      { group: "Navigate", label: "Home", icon: LuHouse, run: () => router.push("/") },
+      { group: "Navigate", label: "Skills", icon: LuSparkles, run: () => router.push("/skills") },
+      { group: "Navigate", label: "Projects", icon: LuFolderGit2, run: () => router.push("/projects") },
+      { group: "Navigate", label: "DreamVerse", icon: LuMoonStar, run: () => router.push("/dreamverse") },
+      { group: "Navigate", label: "Packages", icon: LuPackage2, run: () => router.push("/packages") },
+      { group: "Navigate", label: "Blog", icon: LuNotebookPen, run: () => router.push("/blog") },
       {
         group: "Actions",
         label: "View Resume",
         icon: LuFileText,
-        run: () =>
-          window.open(profile.resumeUrl, "_blank", "noopener,noreferrer"),
+        run: () => window.open(profile.resumeUrl, "_blank", "noopener,noreferrer"),
       },
       {
         group: "Actions",
@@ -97,8 +73,7 @@ export function CommandPalette() {
         group: "Social",
         label: "LinkedIn",
         icon: LuLinkedin,
-        run: () =>
-          window.open(social.linkedin, "_blank", "noopener,noreferrer"),
+        run: () => window.open(social.linkedin, "_blank", "noopener,noreferrer"),
       },
     ];
   }, [router]);
