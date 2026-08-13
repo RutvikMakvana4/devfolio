@@ -39,7 +39,7 @@ export function ProjectTabs() {
         })}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="space-y-4">
         {activeItems.map((project, i) => (
           <Reveal key={project.name} delay={i * 80}>
             <ProjectCard project={project} />

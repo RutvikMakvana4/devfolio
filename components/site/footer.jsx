@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <footer className="mt-8">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6">
+      <div className="mx-auto max-w-5xl px-6 sm:px-8">
         <div className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
             <p className="text-sm text-muted-foreground">
