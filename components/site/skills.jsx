@@ -10,6 +10,10 @@ import {
   SiNodedotjs,
   SiDocker,
   SiGit,
+  SiClaude,
+  SiOpenai,
+  SiGooglegemini,
+  SiGithubcopilot,
 } from "react-icons/si";
 
 import { FaAws } from "react-icons/fa";
@@ -81,16 +85,22 @@ const skillGroups = [
       { name: "RAG", icon: Bot, color: "#10A37F" },
       { name: "Embeddings", icon: Bot, color: "#10A37F" },
       { name: "Vector Search", icon: Bot, color: "#10A37F" },
+      { name: "AI Agent Development", icon: Bot, color: "#10A37F" },
     ],
   },
   {
     title: "Tools",
     skills: [
       { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "GitHub", icon: SiGit },
+      { name: "GitHub", icon: SiGit, color: "#181717" },
       { name: "GitLab", icon: SiGit, color: "#FC6D26" },
       { name: "Postman", icon: TerminalSquare, color: "#FF6C37" },
       { name: "VS Code", icon: TerminalSquare, color: "#007ACC" },
+      { name: "Cursor", icon: TerminalSquare, color: "#000000" },
+      { name: "Claude", icon: SiClaude, color: "#D97757" },
+      { name: "ChatGPT", icon: SiOpenai, color: "#10A37F" },
+      { name: "Gemini", icon: SiGooglegemini, color: "#4285F4" },
+      { name: "GitHub Copilot", icon: SiGithubcopilot, color: "#000000" },
     ],
   },
 ];

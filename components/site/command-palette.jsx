@@ -19,6 +19,7 @@ import {
   LuSparkles,
   LuMoonStar,
 } from "react-icons/lu";
+import { PiXLogo } from "react-icons/pi";
 import { profile, email, socialMedia } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
@@ -39,7 +40,7 @@ export function CommandPalette() {
       { group: "Navigate", label: "Projects", icon: LuFolderGit2, run: () => router.push("/projects") },
       { group: "Navigate", label: "DreamVerse", icon: LuMoonStar, run: () => router.push("/dreamverse") },
       { group: "Navigate", label: "Packages", icon: LuPackage2, run: () => router.push("/packages") },
-      { group: "Navigate", label: "Blog", icon: LuNotebookPen, run: () => router.push("/blog") },
+      { group: "Navigate", label: "Blogs", icon: LuNotebookPen, run: () => router.push("/blog") },
       {
         group: "Actions",
         label: "View Resume",
@@ -74,6 +75,12 @@ export function CommandPalette() {
         label: "LinkedIn",
         icon: LuLinkedin,
         run: () => window.open(social.linkedin, "_blank", "noopener,noreferrer"),
+      },
+            {
+        group: "Social",
+        label: "Twitter",
+        icon: PiXLogo,
+        run: () => window.open(social.x, "_blank", "noopener,noreferrer"),
       },
     ];
   }, [router]);

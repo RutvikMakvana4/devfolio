@@ -22,9 +22,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} {profile.name}
             </p>
-            <p className="text-xs text-muted-foreground/70">
-              Built with Next.js, Tailwind CSS &amp; care.
-            </p>
           </div>
 
           <div className="flex items-center gap-1">

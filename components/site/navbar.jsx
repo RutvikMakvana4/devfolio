@@ -19,7 +19,7 @@ const links = [
     label: "Packages",
     external: true,
   },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blogs" },
   { href: "/dreamverse", label: "DreamVerse" },
 ];
 
